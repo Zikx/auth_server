@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Redis task-Note</title>
+    <style>
+        .newspaper {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+        .head {
+            text-align: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <div class="head">
+        <h1>Simple Redis task note</h1>
+    </div>
+    <div class="newspaper">
+        <form method="POST">
+            {{ cform.hidden_tag() }}
+            <fieldset>
+                <legend>Create Task</legend>
+                {{ cform.title.label}} <br>
+                {{ cform.title}} <br>
+                {{ cform.shortdesc.label }} <br>
+                {{ cform.shortdesc}} <br>
+                {{ cform.priority.label }} <br>
+                {{ cform.priority }} <br><br>
+                {{ cform.create}} 
+            </fieldset>
+        </form>
+
+        <form method="POST">
+            {{ dform.hidden_tag() }}
+            <fieldset>
+                <legend>Delete Task</legend>
+                {{ dform.key.label }} <br>
+                {{ dform.key}} <br>
+                <br> OR <br><br>
+                {{ dform.title.label }}
+                {{ dform.title }}
+                {{ dform.delete }}
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <br>
+    <b>Tasks List:  </b>
+    
+</body>
+</html>
